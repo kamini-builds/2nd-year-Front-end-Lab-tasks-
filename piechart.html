@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Games Pie Chart</title>
+    <style>
+      body {
+        margin: 50px 0 0;
+        background-color: whitesmoke;
+      }
+
+      .pie-chart {
+        position: relative;
+        width: 440px;
+        height: 440px;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 8px solid rgb(62, 3, 56);
+        background: conic-gradient(
+          yellow 0deg 90deg,
+          rgb(236, 134, 149) 90deg 180deg,
+          rgb(90, 196, 90) 180deg 270deg,
+          rgb(11, 140, 220) 270deg 360deg
+        );
+      }
+
+      .pie {
+        position: absolute;
+        font-size: 19px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .pie span {
+        display: block;
+        font-size: 14px;
+        color: black;
+      }
+      .Basketball {
+        top: 20%;
+        right: 15%;
+      }
+      .Baseball {
+        bottom: 20%;
+        right: 22%;
+      }
+      .Kabaddi {
+        bottom: 20%;
+        left: 20%;
+      }
+      .Volleyball {
+        top: 20%;
+        left: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pie-chart">
+      <div class="pie Basketball">Basketball <span>5 players</span></div>
+      <div class="pie Baseball">Baseball <span> 9 players</span></div>
+      <div class="pie Kabaddi">Kabaddi <span> 7 players</span></div>
+      <div class="pie Volleyball">Volleyball <span> 6 players</span></div>
+    </div>
+  </body>
+</html>
