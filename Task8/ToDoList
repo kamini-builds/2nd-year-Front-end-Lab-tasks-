@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My To-Do List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 380px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #764ba2;
+            margin-bottom: 25px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #764ba2;
+        }
+
+        button {
+            padding: 12px 15px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5a3685;
+            transform: scale(1.05);
+        }
+
+        ul {
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            list-style: none;
+            background: #f3effa;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background: #e8def5;
+        }
+
+        .Delete-btn {
+            background: #ee0530;
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        .Delete-btn:hover {
+            background: #f90f3a;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1> My To-Do List </h1>
+
+        <div class="input-box">
+            <input type="text" id="taskInput"
+            placeholder="Enter your task...">
+
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        function addTask() {
+
+            let input = document.getElementById("taskInput");
+
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            let span = document.createElement("span");
+            span.textContent = task;
+
+            let btn = document.createElement("button");
+            btn.textContent = "Delete";
+            btn.className = "Delete-btn";
+
+            btn.addEventListener("click", function() {
+                li.remove();
+            });
+
+            li.appendChild(span);
+            li.appendChild(btn);
+
+            document.getElementById("taskList")
+            .appendChild(li);
+
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+</html>
